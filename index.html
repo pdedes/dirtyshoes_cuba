@@ -323,13 +323,20 @@
     </script> -->
     <script>
         $( document ).ready(function() {
+            
             console.log( "ready!" );
+
             function showMailingPopUp() {
                 require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })
                 document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
             };
 
-            document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
+            // document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
+
+            $('#open-popup').on('click', function(event) {
+              event.preventDefault(); // To prevent following the link (optional)
+              showMailingPopUp();;
+            });
         });
     </script>
 

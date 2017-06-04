@@ -74,7 +74,7 @@
                 <h1 id="homeHeading">See How Easily You Can Confidently Plan an Incredible Vacation to Cuba</h1>
                 <hr>
                 <h5>You don't have to waste weeks or months digging up information, planning out your activities, and still worrying whether it's all going to be worth it. We went to Cuba and learned everything you need to know to make your trip unforgettable.<strong> We want to share all of it with you.</strong></h5><br>
-                <a class="btn btn-primary btn-xl" onclick="showMailingPopUp();">Download a <u>FREE</u> Excerpt from the Guide!</a>
+                <button id="open-popup" class="btn btn-primary btn-xl">Download a <u>FREE</u> Excerpt from the Guide!</a>
             </div>
         </div>
     </header>
@@ -327,7 +327,7 @@
             document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
         };
 
-        // document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
+        document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
     </script>
 
 </body>

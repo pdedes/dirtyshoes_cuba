@@ -315,7 +315,12 @@
     <script src="js/creative.min.js"></script>
 
     <!-- Mailchimp popup form -->
-    <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })</script>
+    <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script type="text/javascript">
+        setTimeout( function() {
+            require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })
+        }, 10000);
+    </script>
 
 </body>
 

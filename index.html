@@ -326,18 +326,23 @@
 
             console.log( "ready!" );
 
-            function showMailingPopUp() {
-                require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })
-                document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                console.log("showMailingPopUp executed");
-            };
+            // function showMailingPopUp() {
+            //     console.log("require equals =", document.cookie);
+            //     require(["mojo/signup-forms/Loader"], function(L) { L.start({"src":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })
+            //     document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            //     console.log("showMailingPopUp executed");
+            // };
 
             // document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
 
             $('#open-popup').on('click', function(event) {
-              event.preventDefault(); // To prevent following the link (optional)
-              showMailingPopUp();
-              console.log("jquery onclick func executed");
+                console.log("running button function");
+
+                require(["mojo/signup-forms/Loader"], function(L) { L.start({"src":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}); });
+                document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                console.log("showMailingPopUp executed");
+
+                event.preventDefault(); // To prevent following the link (optional)
             });
         });
     </script>

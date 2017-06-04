@@ -74,7 +74,7 @@
                 <h1 id="homeHeading">See How Easily You Can Confidently Plan an Incredible Vacation to Cuba</h1>
                 <hr>
                 <h5>You don't have to waste weeks or months digging up information, planning out your activities, and still worrying whether it's all going to be worth it. We went to Cuba and learned everything you need to know to make your trip unforgettable.<strong> We want to share all of it with you.</strong></h5><br>
-                <a class="btn btn-primary btn-xl" href="#about">Download a <u>FREE</u> Excerpt from the Guide!</a>
+                <a id="open-popup" class="btn btn-primary btn-xl" href="#about">Download a <u>FREE</u> Excerpt from the Guide!</a>
             </div>
         </div>
     </header>
@@ -316,10 +316,18 @@
 
     <!-- Mailchimp popup form -->
     <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-    <script type="text/javascript">
-        setTimeout( function() {
+    <!-- <script type="text/javascript">
+        // setTimeout( function() {
             require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })
-        }, 10000);
+        // }, 10000);
+    </script> -->
+    <script>
+        function showMailingPopUp() {
+            require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"480685e38085bdbb4c7131ab9","lid":"7ad8b7e58f"}) })
+            document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        };
+
+        document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
     </script>
 
 </body>
